@@ -19,9 +19,9 @@
 	#size-cells = <2>;
 
 	aliases {
-		mmc0 = &sd_emmc_b; /* SD card */
-		mmc1 = &sd_emmc_c; /* eMMC */
-		mmc2 = &sd_emmc_a; /* SDIO */
+		mmc0 = &sd_emmc_a; /* SDIO */
+		mmc1 = &sd_emmc_b; /* SD card */
+		mmc2 = &sd_emmc_c; /* eMMC */
 	};
 
 	chosen {
@@ -2507,6 +2507,9 @@
 		clocks = <&clkc CLKID_NNA_CORE_CLK>,
 			 <&clkc CLKID_NNA_AXI_CLK>;
 		clock-names = "core", "bus";
+		assigned-clocks = <&clkc CLKID_NNA_CORE_CLK>,
+				  <&clkc CLKID_NNA_AXI_CLK>;
+		assigned-clock-rates = <800000000>, <800000000>;
 		resets = <&reset RESET_NNA>;
 		status = "disabled";
 	};
